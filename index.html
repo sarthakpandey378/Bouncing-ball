@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moving Bouncing Ball Animation</title>
+<style>
+  .container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .ball {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: bounce 1s infinite, move 4s infinite linear;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      bottom: 0; /* Initial and final position */
+    }
+    50% {
+      bottom: 150px; /* Peak of the bounce */
+    }
+  }
+
+  @keyframes move {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 50px);
+    }
+  }
+
+  .floor {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="ball"></div>
+    <div class="floor"></div>
+  </div>
+</body>
+</html>
